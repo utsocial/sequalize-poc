@@ -48,8 +48,8 @@ Run the project :
 npm start
 
 ```
-Crating a new migration and model with underscore defaults fields
+Crating a new migration and model with underscore defaults fields (local instalation sequelize)
 
 ```
-sequelize model:create --underscored --name task --attributes "description:string, quantity:integer"
+node_modules/.bin/sequelize model:create --underscored --name task --attributes "description:string, quantity:integer"
 
