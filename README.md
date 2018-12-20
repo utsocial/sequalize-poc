@@ -1,4 +1,4 @@
-# Sequelize example
+# Sequelize Probe of concept
 
 
 ## How to run the project
@@ -39,9 +39,17 @@ Init and seed database :
 sequelize db:migrate
 
 sequelize db:seed:all
+
 ```
 
 Run the project :
 
 ```
 npm start
+
+```
+Crating a new migration and model with underscore defaults fields
+
+```
+sequelize model:create --underscored --name task --attributes "description:string, quantity:integer"
+
