@@ -52,4 +52,3 @@ Crating a new migration and model with underscore defaults fields (local instala
 
 ```
 node_modules/.bin/sequelize model:create --underscored --name task --attributes "description:string, quantity:integer"
-
