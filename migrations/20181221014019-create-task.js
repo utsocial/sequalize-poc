@@ -4,9 +4,9 @@ module.exports = {
     return queryInterface.createTable('Tasks', {
       id: {
         allowNull: false,
+        autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.UUID,
-        defaultValue: Sequelize.UUIDV4
+        type: Sequelize.INTEGER
       },
       name: {
         type: Sequelize.STRING
@@ -18,12 +18,15 @@ module.exports = {
         type: Sequelize.TEXT
       },
       ContextId: {
-        type: Sequelize.UUID,
+        type: Sequelize.INTEGER,
         onDelete: 'CASCADE',
         references: {
           model: 'Contexts',
           key: 'id'
         }
+      },
+      deletedAt: {
+        type: Sequelize.DATE
       },
       createdAt: {
         allowNull: false,

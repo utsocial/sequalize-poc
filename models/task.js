@@ -1,12 +1,6 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
   const Task = sequelize.define('Task', {
-    id: {
-      allowNull: false,
-      primaryKey: true,
-      type: DataTypes.UUID,
-      defaultValue: DataTypes.UUIDV4
-    },
     name: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -19,9 +13,12 @@ module.exports = (sequelize, DataTypes) => {
     },
     done: DataTypes.BOOLEAN,
     description: DataTypes.TEXT
-  }, {});
+  }, {
+    timestamps: true,
+    paranoid: true
+  }
+  );
   Task.associate = function(models) {
-    // associations can be defined here
     Task.belongsTo(models.Context, {
       foreignKey: 'ContextId',
       onDelete: 'CASCADE'

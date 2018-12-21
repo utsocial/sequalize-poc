@@ -7,12 +7,26 @@ function startApp() {
             console.log(quote[i].id + " | " + quote[i].quote);
         }
     });
+    console.log('Inserting data in user table:');
+    
 }
 
 // Sync all defined models to the DB
 models.sequelize.sync()
 .then(function() {
-    startApp();
+    // startApp();
+    return models.User.create({
+        email: 'ivanchenoweth@gmail.com', 
+        password: '123',
+        context: [{
+            name: 'contextName',
+            task: [{
+                name: 'taskName',
+                done: true,
+                description: 'Description of the task'
+            }]
+          }]
+    });
 })
 .catch(function (e) {
     throw new Error(e);
