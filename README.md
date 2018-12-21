@@ -52,3 +52,9 @@ Crating a new migration and model with underscore defaults fields (local instala
 
 ```
 node_modules/.bin/sequelize model:create --underscored --name task --attributes "description:string, quantity:integer"
+
+```
+Is possible to follow the tutorial to add relationships:
+
+```
+https://www.duringthedrive.com/2017/05/06/models-migrations-sequelize-node/
